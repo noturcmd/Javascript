@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlonePainPeanut</title>
+</head>
+<body>
+    <h2>Konversi Tipe Data</h2>
+    <script>
+        let varA = 10;
+        let varB = "20";
+        let hasil = varA + parseInt(varB);
+        document.writeln(`<p>${hasil}</p>`);
+        
+        // angka.toString() --> konversi number ke String
+        
+        // parseFloat atau parseInt atau parse lainnya masih bisa mentoleransi jika number yang dikonversi terdapat karakter bukan angka, semisal abcd dsb, selama yang di depan adalah number
+        
+        // namun konversi dengan method Number() tidak bisa mentoleransi adanya karakter selain number
+        
+        // NaN adalah kondisi dimana kita melakukan operasi matematika pada sesuatu yang bukan number atau pembagian dengan nol atau mengkonversi string yang bukan angka ke angka, NaN --> Not a Number
+        
+        // gunakan method isNaN() untuk mengecek apakah suatu nilai itu NaN atau bukan, true jika NaN, dan false jika bukan NaN
+        
+        let varC = "String";
+        
+        document.writeln(`<p>${Number(varC)}</p>`);
+        document.writeln(`<p>${isNaN(Number(varC))}</p>`);
+
+
+    </script>
+</body>
+</html>

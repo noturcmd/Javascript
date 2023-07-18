@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlonePainPeanut</title>
+</head>
+<body>
+    <h2>String template dengan Javascript</h2>
+    <script>
+        let nama = prompt("Masukkan nama Anda : ");
+        let umur = prompt("Masukkan usia Anda : ");
+        let info;
+        if(umur >= 17){
+            info = `${nama}, Anda berhak mengikuti Pemilu`;
+        }else if(umur < 17 && umur >= 8){
+            info = `${nama}, Usia Anda tidak memenuhi untuk mengikuti Pemilu`;
+        }else if(umur < 8 && umur >= 1){
+            info = `${nama}, Anda masih kecil`;
+        }else if(umur == 0){
+            info = `${nama}, Anda belum lahir`;
+        }else{
+            info = `${nama}, input Anda salah`;
+        }
+
+        document.writeln(`<p>${info}</p>`);
+    </script>
+</body>
+</html>
