@@ -8,7 +8,7 @@
   <body>
     <script>
       function jumlahDuaAngka(a, b) {
-        return a + b;
+        return parseInt(a) + parseInt(b);
       }
 
       var angka1 = prompt("Masukkan angka ke-1 : ");
@@ -16,7 +16,11 @@
 
       var hasil = jumlahDuaAngka(angka1, angka2);
 
-      document.writeln(`Hasil penjumlahan ${angka1} + ${angak2} = ${hasil}`);
+      document.writeln(
+        `<h1>Hasil penjumlahan ${angka1} + ${angka2} = ${hasil}</h1>`
+      );
+
+      document.writeln("Program berhasil");
     </script>
   </body>
 </html>
