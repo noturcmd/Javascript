@@ -7,9 +7,16 @@
   </head>
   <body>
     <script>
-      var hasil = function jumlahDuaAngka(a, b) {
+      function jumlahDuaAngka(a, b) {
         return a + b;
-      };
+      }
+
+      var angka1 = prompt("Masukkan angka ke-1 : ");
+      var angka2 = prompt("Masukkan angka ke-2 : ");
+
+      var hasil = jumlahDuaAngka(angka1, angka2);
+
+      document.writeln(`Hasil penjumlahan ${angka1} + ${angak2} = ${hasil}`);
     </script>
   </body>
 </html>
