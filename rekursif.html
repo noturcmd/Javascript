@@ -7,5 +7,24 @@
 </head>
 <body>
     
+    <h2>Belajar Fungsi Rekursif di Javascript</h2>
+    <script>
+
+        let angka = inputData()
+        function factorial(angka){
+            if(angka == 0){
+                return 1;
+            }else{
+                return angka * factorial(angka - 1);
+            }
+        }
+        
+        function inputData(){
+            let inputAngka = prompt("Masukkan angka : ");
+            return inputAngka;
+        }
+        
+        document.writeln(`Hasil dari : ${angka} = ${factorial(angka)}!`);
+    </script>
 </body>
 </html>
