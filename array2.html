@@ -1,23 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AlonePainPeanut</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <h1>Array 2</h1>
     <script>
-        // var arr = []
-        // arr.push("Ridwanul Bakhri");
-        // arr.push("Fatir Rifki");
-        // arr.push("Ahmad Bazir");
-        // arr.push("Delisa Unais");
-        // console.log(arr);
-        // console.log(5);
-        // console.table(arr);
+      // var arr = []
+      // arr.push("Ridwanul Bakhri");
+      // arr.push("Fatir Rifki");
+      // arr.push("Ahmad Bazir");
+      // arr.push("Delisa Unais");
+      // console.log(arr);
+      // console.log(5);
+      // console.table(arr);
+
+      // var nama = ["Ridwanul Bakhri","Fatir Rifki","Ahmad Bazir","Delisa Unais","Ridwanul Bakhri","Fatir Rifki","Ahmad Bazir","Delisa Unais","Ridwanul Bakhri","Fatir Rifki","Ahmad Bazir","Delisa Unais"];
+      // nama.forEach(function(nama, NIM){
+      //     if(NIM <= 8){
+      //         console.log(`Nama : ${nama}\nNIM  : K352200${NIM + 1}\n`);
+      //     }else{
+      //         console.log(`Nama : ${nama}\nNIM  : K35220${NIM + 1}\n`);
+      //     }
+      // })
+
+      function inputNama() {
+        var namaSiswa = prompt("Masukkan nama Siswa : ");
+        return namaSiswa;
+      }
+
+      function isContinue1() {
+        var isContinue = true;
+        while (isContinue) {
+          nama.push(inputNama());
+          var inputIsContinue = confirm("Stop input data ? : ");
+          if (inputIsContinue === true) {
+            break;
+          } else {
+            isContinue === false;
+          }
+        }
+      }
+      var nama = [];
+      isContinue1();
+      nama.forEach(function (namaSiswa, NIM) {
+        if (NIM <= 8) {
+          document.writeln(
+            "<p>Nama : " +
+              namaSiswa +
+              "</br>NIM\t: K352200" +
+              (NIM + 1) +
+              "</p>"
+          );
+        } else {
+          document.writeln(
+            "<p>Nama : " + namaSiswa + "</br>NIM: K35220" + (NIM + 1) + "</p>"
+          );
+        }
+      });
     </script>
-    
-</body>
+  </body>
 </html>
