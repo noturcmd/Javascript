@@ -13,4 +13,7 @@
 
 var ubahLayout = document.getElementsByTagName("li");
 console.log(ubahLayout);
-ubahLayout[0].style.backgroundColor = "red";
+
+for(var i = 0; i < ubahLayout.length; i++){
+    ubahLayout[i].style.backgroundColor = "red";
+}
