@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AlonePainPeanut</title>
+    <style>
+      .container {
+        margin: 100px 200px;
+      }
+
+      label#choose-flavour {
+        padding-bottom: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h2>Welcome to My Website :)</h2>
+      </header>
+      <main>
+        <form action="" method="post">
+          <legend>Time to choose!</legend>
+          <label for="ice-cream-choice" id="choose-flavour"
+            >Choose a Flavor : </label
+          ><br />
+          <input
+            list="ice-cream-flavors"
+            id="ice-cream-choice"
+            name="ice-cream-choice"
+          />
+          <datalist id="ice-cream-flavors">
+            <option value="Chocolate">Chocolate</option>
+            <option value="Coconut">Coconut</option>
+            <option value="Mint">Mint</option>
+            <option value="Strawberry">Strawberry</option>
+            <option value="Vanilla">Vanilla</option>
+          </datalist>
+        </form>
+        <br />
+        <video
+          src="content-video/Nahida.mp4"
+          controls
+          width="640"
+          height="480"
+          poster="content-img/Nahidaposter.jpeg"
+        ></video>
+        <br /><br />
+        <iframe
+          src="content-video/Nahida.mp4"
+          frameborder="2"
+          width="1920"
+          height="1080"
+        ></iframe>
+      </main>
+    </div>
+    <script></script>
+  </body>
+</html>
