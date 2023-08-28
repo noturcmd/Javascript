@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlonePainPeanut</title>
+    <style>
+    </style>
+</head>
+<body>
+    <h2>Switch in Javascript</h2>
+    <div class="output-ucapan">
+        <form action="">
+            <button type="button" onclick="ucapanSelamatatauGagal(inputNilaiAkademik, inputNilaiKehadiran)">Hasil</button>
+            <br>
+            <textarea name="result-ucapan" id="result-ucapan" cols="" rows="2"></textarea>
+        </form>
+    </div>
+    <script>
+        function ucapanSelamatatauGagal(nilaiAkademik, nilaiKehadiran){
+            let predikat = null;
+            if((nilaiAkademik > 90 && nilaiAkademik <= 100) && (nilaiKehadiran > 90 && nilaiKehadiran <= 100)){
+                predikat = "A";
+            }else if((nilaiAkademik <= 90 && nilaiAkademik >= 84 ) && (nilaiKehadiran <= 90 && nilaiKehadiran >= 84)){
+                predikat = "B";
+            }else if((nilaiAkademik < 84 && nilaiAkademik >= 70) && (nilaiKehadiran < 84 && nilaiKehadiran >= 70)){
+                predikat = "C";
+            }else{
+                predikat = "Gagal";
+            }
+
+            switch (predikat){
+                case "A":
+                    h2.innerHTML = `Selamat! Anda lulus dengan predikat : "${predikat}"`;
+                    break;
+                case "B":
+                    h2.innerHTML = `Selamat! Anda lulus dengan predikat : "${predikat}"`;
+                    break;
+                case "C":
+                    h2.innerHTML = `Selamat! Anda lulus dengan predikat : "${predikat}"`;
+                    break;
+                default:
+                    h2.innerHTML = `Anda Gagal!`;
+            }
+        }
+
+        const h2 = document.querySelector('div.output-ucapan form textarea');
+        let inputNilaiAkademik = Number(prompt("Masukkan nilai Akademik : "));
+        let inputNilaiKehadiran = Number(prompt("Masukkan nilai Kehadiran : "));
+    </script>
+</body>
+</html>
