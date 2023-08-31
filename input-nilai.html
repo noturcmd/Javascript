@@ -8,14 +8,31 @@
         .container > header h1{
             font-family: Arial, Helvetica, sans-serif;
         }
+
+        .container form > button{
+            display: block;
+            position: relative;
+        }
+
+        .container textarea{
+            display: inline-block;
+            margin-left: 100px;
+            margin-top: -30px;
+            width: 200px;
+            height: 100px;
+            resize: none;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <form action="">
             <label for="name-user">Name : </label><input type="text" id="name-user">
-            <button type="button" onclick="cetak()">Cek</button>
-            <p id="keluaran"></p>
+            <br>
+            <label for="address-user">Name : </label><input type="text" id="address-user" required>
+            <br><br>
+            <button type="button" onclick="cekAddress()">Cek Alamat</button>
+            <textarea name="" id="keluaran"></textarea>
         </form>
     </div>
     <script>
@@ -27,9 +44,23 @@
             return hitungIPK / nameRealUser[nameStudent]?.IPK.length;
         }
 
+        function cekAddress(){
+            const inputNameUsers = document.getElementById('address-user').value;
+            if(inputNameUsers === ""){
+                document.getElementById("keluaran").innerHTML = `Maaf, Anda belum mengisi data`;
+            }else{
+                document.getElementById('keluaran').innerHTML = `${nameRealUser[inputNameUsers]?.address}`;
+            }
+            
+        }
+
         function cetak(){
             const inputNameUsers = document.getElementById('name-user').value;
-            document.getElementById("keluaran").innerHTML = `${inputNameUsers}, IPK Anda : ${cekIPK(inputNameUsers)}`;
+            if(inputNameUsers === undefined){
+                document.getElementById("keluaran").innerHTML = `Maaf, Anda belum mengisi data`;
+            }else{
+                document.getElementById("keluaran").innerHTML = `${inputNameUsers}, IPK Anda : ${cekIPK(inputNameUsers)}`;
+            }
         }
         const nameRealUser = {
             "Ridwanul Bakhri": {
