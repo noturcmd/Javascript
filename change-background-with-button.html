@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Dasar</title>
+    <style>
+        .container{
+            margin: 50px auto;
+            width: 200px;
+            height: 100px;
+            background-color: crimson;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: row;
+        }
+
+        .container button{
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            transition: .5s;
+        }
+
+        .container button:nth-child(1){
+            background-color: plum;
+        }
+        .container button:nth-child(2){
+            background-color: pink;
+        }
+
+        .container button:hover{
+            border-top-style: solid;
+            border-top-color: lawngreen;
+        }
+
+        .mati{
+            background-color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button type="button" onclick="ubahBackgroundBody()" class="hidup">Matikan</button>
+    </div>
+    <script>
+        function ubahBackgroundBody(){
+            const ubahBackground = document.querySelector("body");
+            const ubahTeks1 = document.querySelector(".container button");
+            const ubahTeks2 = document.querySelector(".container button").textContent;
+            ubahBackground.classList.toggle("mati");
+            if(ubahTeks2 === "Matikan"){
+                ubahTeks1.innerHTML = "Hidupkan";
+            }else{
+                ubahTeks1.innerHTML = "Matikan";
+            }
+
+        }
+    </script>
+</body>
+</html>
