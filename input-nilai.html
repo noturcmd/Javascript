@@ -12,6 +12,21 @@
         .container form > input[type="text"]{
             border: 2px solid darkcyan;
         }
+        
+        .container form textarea{
+            resize: none;
+            width: 400px;
+            height: 70px;
+        }
+
+        .container form ul li button{
+            background-color: white;
+            padding: 5px;
+        }
+
+        .container form ul li{
+            display: inline-block;
+        }
 
         
     </style>
@@ -23,10 +38,8 @@
             <br>
             <ul>
                 <li><button type="button" onclick="cekIPK()">Cek IPK</button></li>
-                <br>
                 <li><button type="button" onclick="cekAddress()">Cek Alamat</button></li>
-                <br>
-                <li><button type="button" onclick="cekAddress()">Cek Semua</button></li>
+                <li><button type="button" onclick="cekAll()">Cek Semua</button></li>
             </ul>
             <textarea name="" id="keluaran"></textarea>
         </form>
@@ -34,10 +47,10 @@
     <script>
         function studentIPK(nameStudent){
             let hitungIPK = 0;
-            for(const ipk of nameRealUser[nameStudent]?.IPK){
+            for(const ipk of nameRealUser[nameStudent].IPK){
                 hitungIPK += ipk;
             }
-            return hitungIPK / nameRealUser[nameStudent]?.IPK.length;
+            return hitungIPK / nameRealUser[nameStudent].IPK.length;
         }
 
         function cekAddress(){
@@ -62,6 +75,18 @@
                 document.getElementById('keluaran').innerHTML = `${studentIPK(inputNameUsers)}`;
             }
         }
+
+        function cekAll(){
+           const inputNameUsers = document.getElementById('name-user').value;
+            if(inputNameUsers === ""){
+                document.getElementById("keluaran").innerHTML = `Maaf, Anda belum mengisi data`;
+            }else if(!(inputNameUsers in nameRealUser)){
+                document.getElementById("keluaran").innerHTML = `Maaf, ${inputNameUsers}, tidak ada dalam data!`
+            }else{
+                document.getElementById('keluaran').innerHTML = `${studentIPK(inputNameUsers)}\n${nameRealUser[inputNameUsers]?.address}`;
+            }
+
+        }
         const nameRealUser = {
             "Ridwanul Bakhri": {
                 fullName: "Ridwanul Bakhri",
@@ -72,6 +97,8 @@
 
             }
         }
+
+        
     </script>
 </body>
 </html>
