@@ -9,19 +9,11 @@
             font-family: Arial, Helvetica, sans-serif;
         }
 
-        .container form > button{
-            display: block;
-            position: relative;
+        .container form > input[type="text"]{
+            border: 2px solid darkcyan;
         }
 
-        .container textarea{
-            display: inline-block;
-            margin-left: 100px;
-            margin-top: -30px;
-            width: 200px;
-            height: 100px;
-            resize: none;
-        }
+        
     </style>
 </head>
 <body>
@@ -29,14 +21,18 @@
         <form action="">
             <label for="name-user">Name : </label><input type="text" id="name-user">
             <br>
-            <label for="address-user">Name : </label><input type="text" id="address-user" required>
-            <br><br>
-            <button type="button" onclick="cekAddress()">Cek Alamat</button>
+            <ul>
+                <li><button type="button" onclick="cekIPK()">Cek IPK</button></li>
+                <br>
+                <li><button type="button" onclick="cekAddress()">Cek Alamat</button></li>
+                <br>
+                <li><button type="button" onclick="cekAddress()">Cek Semua</button></li>
+            </ul>
             <textarea name="" id="keluaran"></textarea>
         </form>
     </div>
     <script>
-        function cekIPK(nameStudent){
+        function studentIPK(nameStudent){
             let hitungIPK = 0;
             for(const ipk of nameRealUser[nameStudent]?.IPK){
                 hitungIPK += ipk;
@@ -45,28 +41,32 @@
         }
 
         function cekAddress(){
-            const inputNameUsers = document.getElementById('address-user').value;
+            const inputNameUsers = document.getElementById('name-user').value;
             if(inputNameUsers === ""){
                 document.getElementById("keluaran").innerHTML = `Maaf, Anda belum mengisi data`;
+            }else if(!(inputNameUsers in nameRealUser)){
+                document.getElementById("keluaran").innerHTML = `Maaf, ${inputNameUsers}, tidak ada dalam data!`
             }else{
                 document.getElementById('keluaran').innerHTML = `${nameRealUser[inputNameUsers]?.address}`;
             }
             
         }
 
-        function cetak(){
+        function cekIPK(){
             const inputNameUsers = document.getElementById('name-user').value;
-            if(inputNameUsers === undefined){
+            if(inputNameUsers === ""){
                 document.getElementById("keluaran").innerHTML = `Maaf, Anda belum mengisi data`;
+            }else if(!(inputNameUsers in nameRealUser)){
+                document.getElementById("keluaran").innerHTML = `Maaf, ${inputNameUsers}, tidak ada dalam data!`
             }else{
-                document.getElementById("keluaran").innerHTML = `${inputNameUsers}, IPK Anda : ${cekIPK(inputNameUsers)}`;
+                document.getElementById('keluaran').innerHTML = `${studentIPK(inputNameUsers)}`;
             }
         }
         const nameRealUser = {
             "Ridwanul Bakhri": {
                 fullName: "Ridwanul Bakhri",
                 address: "Kost Ungu, Makamhaji, Pabelan",
-                IPK: [3.48, 3.60] 
+                IPK: [3.9, 4] 
             },
             RidwanulBakhri: {
 
