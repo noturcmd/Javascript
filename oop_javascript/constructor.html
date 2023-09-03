@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlonePainPeanut</title>
+</head>
+<body>
+    <script>
+        function Person(firstName, lastName){
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.sayHello = function (name){
+                return `Hello, ${name}! My name is ${this.firstName} ${this.lastName}`
+            }
+        }
+
+        const person1 = {
+            firstName: "First"
+        }
+
+        const ridwan = new Person("Ridwanul", "Bakhri");
+        console.log(ridwan.firstName);
+        console.log(ridwan.lastName);
+        console.log(ridwan.sayHello("Agus"));
+
+        const eko = new Person("Eko", "Septiansyah");
+        console.log(eko.firstName);
+        console.log(eko.lastName);
+        console.log(ridwan.sayHello("Dias"));
+    </script>
+</body>
+</html>
