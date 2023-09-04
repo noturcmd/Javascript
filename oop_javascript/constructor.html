@@ -7,27 +7,27 @@
 </head>
 <body>
     <script>
-        function Person(firstName, lastName){
-            this.firstName = firstName;
-            this.lastName = lastName;
+        function People(){
             this.sayHello = function (name){
                 return `Hello, ${name}! My name is ${this.firstName} ${this.lastName}`
             }
         }
+        function Person(firstName, lastName){
+            this.firstName = firstName;
+            this.lastName = lastName;
+            People.call(this);
+        }
+
 
         const person1 = {
             firstName: "First"
         }
 
-        const ridwan = new Person("Ridwanul", "Bakhri");
-        console.log(ridwan.firstName);
-        console.log(ridwan.lastName);
-        console.log(ridwan.sayHello("Agus"));
 
-        const eko = new Person("Eko", "Septiansyah");
-        console.log(eko.firstName);
-        console.log(eko.lastName);
-        console.log(ridwan.sayHello("Dias"));
+        const ridwan = new Person("Ridwanul", "Bakhri");
+        console.log(ridwan);
+
+
     </script>
 </body>
 </html>

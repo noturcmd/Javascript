@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlonePainPeanut</title>
+</head>
+<body>
+    <script>
+        class Person{
+            #firstName;
+            #lastName;
+
+            get fullName(){
+                return `${this.#firstName} ${this.#lastName}`
+            }
+
+            set fullName(fullName){
+                const results = fullName.split(" ");
+                this.#firstName = results[0];
+                this.#lastName = results[1];
+            }
+        }
+
+        const ridwan = new Person();
+        ridwan.fullName = "Ridwanul Bakhri";
+        console.log(ridwan.fullName)
+    </script>
+</body>
+</html>
