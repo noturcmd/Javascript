@@ -7,13 +7,31 @@
 </head>
 <body>
     <script>
+        class validationError extends Error{
+            constructor(message, obj){
+                super(message);
+                this.obj = obj;
+            }
+        }
         class People{
+            #firstName;
+            #lastName;
+            #age;
             constructor(firstName, lastName){
                 this.name = firstName + lastName;
             }
             sayGoodBye(name){
                 return `Hello ${name}, my name is ${this.name} Good Bye!`;
             }
+
+            calculateAge(year){
+                if(year === 0){
+                    throw new validationError("Tahun tidak boleh sama dengan 0", "year")
+                }else{
+                    return year - this.#age;
+                }
+            }
+
 
             get fullName(){
                 return `${this.firstName} ${this.lastName}`
@@ -35,6 +53,18 @@
         console.log(ridwan.fullName);
         console.log(ridwan.firstName);
         console.log(ridwan.lastName);
+
+        try{
+            console.log(`${ridwan.calculateAge(0)}`)
+        }catch(error){
+            if(error instanceof validationError){
+                console.info(`Kode error pada ${error.obj}, pesan : ${error.message}`);
+            }else{
+                console.info(`Kode : ${error.message}`);
+            }
+        }finally{
+            console.log("Program Sukses!");
+        }
         
     </script>
 </body>
